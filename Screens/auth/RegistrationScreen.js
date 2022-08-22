@@ -21,7 +21,7 @@ const initialState = {
 	password: '',
 };
 
-export default function RegistrationScreen() {
+export default function RgistrationScreen() {
 	const [isKeyboardShow, setIsKeyboardShow] = useState(false);
 	const [state, setState] = useState(initialState);
 	const [dimentions, setDimentions] = useState(Dimensions.get('window').width - 20 * 2);
@@ -65,8 +65,20 @@ export default function RegistrationScreen() {
 								}}>
 
 								<Text style={styles.heading}>
-									Увійти
+									Реєстрація
 								</Text>
+
+								<View style={{ marginTop: 33 }}>
+									<TextInput
+										value={state.login}
+										onChangeText={(value) =>
+											setState((prevState) => ({ ...prevState, login: value }))}
+										onFocus={() => setIsKeyboardShow(true)}
+										style={styles.input}
+										placeholder='Логін'
+										autoFocus
+									/>
+								</View>
 
 								<View style={{ marginTop: 16 }}>
 									<TextInput
@@ -77,6 +89,18 @@ export default function RegistrationScreen() {
 										style={styles.input}
 										placeholder='Електронна пошта'
 										keyboardType='email-address'
+									/>
+								</View>
+
+								<View style={{ marginTop: 16 }}>
+									<TextInput
+										value={state.phone}
+										onChangeText={(value) =>
+											setState((prevState) => ({ ...prevState, phone: value }))}
+										onFocus={() => setIsKeyboardShow(true)}
+										style={styles.input}
+										placeholder='Номер телефону'
+										keyboardType='number-pad'
 									/>
 								</View>
 
@@ -98,11 +122,11 @@ export default function RegistrationScreen() {
 									onPress={() => submitForm()}>
 									<Text
 										style={styles.btnText}>
-										Увійти
+										Зареєструватись
 									</Text>
 								</TouchableOpacity>
 
-								<Text style={styles.formLink}>Немє акаунта? Зареєструватись</Text>
+								<Text style={styles.formLink}>Вже є акаунт? Увійти</Text>
 							</View>
 						</KeyboardAvoidingView>
 					</View>

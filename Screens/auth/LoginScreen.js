@@ -65,20 +65,8 @@ export default function LoginScreen() {
 								}}>
 
 								<Text style={styles.heading}>
-									Реєстрація
+									Увійти
 								</Text>
-
-								<View style={{ marginTop: 33 }}>
-									<TextInput
-										value={state.login}
-										onChangeText={(value) =>
-											setState((prevState) => ({ ...prevState, login: value }))}
-										onFocus={() => setIsKeyboardShow(true)}
-										style={styles.input}
-										placeholder='Логін'
-										autoFocus
-									/>
-								</View>
 
 								<View style={{ marginTop: 16 }}>
 									<TextInput
@@ -89,18 +77,6 @@ export default function LoginScreen() {
 										style={styles.input}
 										placeholder='Електронна пошта'
 										keyboardType='email-address'
-									/>
-								</View>
-
-								<View style={{ marginTop: 16 }}>
-									<TextInput
-										value={state.phone}
-										onChangeText={(value) =>
-											setState((prevState) => ({ ...prevState, phone: value }))}
-										onFocus={() => setIsKeyboardShow(true)}
-										style={styles.input}
-										placeholder='Номер телефону'
-										keyboardType='number-pad'
 									/>
 								</View>
 
@@ -122,11 +98,11 @@ export default function LoginScreen() {
 									onPress={() => submitForm()}>
 									<Text
 										style={styles.btnText}>
-										Зареєструватись
+										Увійти
 									</Text>
 								</TouchableOpacity>
 
-								<Text style={styles.formLink}>Вже є акаунт? Увійти</Text>
+								<Text style={styles.formLink}>Немє акаунта? Зареєструватись</Text>
 							</View>
 						</KeyboardAvoidingView>
 					</View>

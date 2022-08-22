@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { } from 'react-native';
 
 import * as Font from "expo-font";
 import AppLoading from 'expo-app-loading';
-import LoginScreen from './Screens/auth/LoginScreen';
+
 import RegistrationScreen from './Screens/auth/RegistrationScreen';
+import LoginScreen from './Screens/auth/LoginScreen';
 
 const loadApplication = async () => {
 	await Font.loadAsync({
@@ -25,8 +26,8 @@ export default function App() {
 
 	return (
 		<>
-			{/* <LoginScreen /> */}
-			<RegistrationScreen />
+			<LoginScreen />
+			{/* <RegistrationScreen /> */}
 		</>
 	);
 }
