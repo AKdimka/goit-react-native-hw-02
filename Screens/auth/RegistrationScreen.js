@@ -21,7 +21,7 @@ const initialState = {
 	password: '',
 };
 
-export default function RgistrationScreen() {
+export default function RgistrationScreen({ navigation }) {
 	const [isKeyboardShow, setIsKeyboardShow] = useState(false);
 	const [state, setState] = useState(initialState);
 	const [dimentions, setDimentions] = useState(Dimensions.get('window').width - 20 * 2);
@@ -126,7 +126,7 @@ export default function RgistrationScreen() {
 									</Text>
 								</TouchableOpacity>
 
-								<Text style={styles.formLink}>Вже є акаунт? Увійти</Text>
+								<Text style={styles.formLink} onPress={() => navigation.navigate('Login')}>Вже є акаунт? Увійти</Text>
 							</View>
 						</KeyboardAvoidingView>
 					</View>

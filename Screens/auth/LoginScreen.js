@@ -21,7 +21,9 @@ const initialState = {
 	password: '',
 };
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
+	console.log(navigation);
+	console.log(11111111111111111);
 	const [isKeyboardShow, setIsKeyboardShow] = useState(false);
 	const [state, setState] = useState(initialState);
 	const [dimentions, setDimentions] = useState(Dimensions.get('window').width - 20 * 2);
@@ -102,7 +104,7 @@ export default function LoginScreen() {
 									</Text>
 								</TouchableOpacity>
 
-								<Text style={styles.formLink}>Немє акаунта? Зареєструватись</Text>
+								<Text style={styles.formLink} onPress={() => navigation.navigate('Registration')}>Немє акаунта? Зареєструватись</Text>
 							</View>
 						</KeyboardAvoidingView>
 					</View>
